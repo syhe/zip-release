@@ -31,12 +31,12 @@ if [ "$archive_type" = "zip" ]; then
   fi
 elif [ "$archive_type" = "tar" ]; then
   if [ -z "$exclusions" ]; then
-    tar -zcvf "$filename" "$path" || {
+    tar -acvf "$filename" "$path" || {
       printf "$ERRORMSG" "$archive_type"
       exit 1
     }
   else
-    tar -zcvf "$filename" "$path" --exclude="$exclusions" || {
+    tar -acvf "$filename" "$path" --exclude="$exclusions" || {
       printf "$ERRORMSG" "$archive_type"
       exit 1
     }
