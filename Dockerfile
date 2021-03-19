@@ -7,7 +7,7 @@ LABEL "version"="0.4.0"
 COPY entrypoint.sh /entrypoint.sh
 
 RUN apt-get update; \
-    apt-get install -y zip; \
+    apt-get install -y zip zstd; \
     apt-get clean -y; \
     rm -rf /var/lib/apt/lists/*; \
     chmod +x /entrypoint.sh
